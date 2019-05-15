@@ -6,6 +6,7 @@ script:
 - chmod 600 ./deploy_id_rsa.pem
 - ssh-keyscan -H 89.208.199.114 >> ~/.ssh/known_hosts
 - scp -i ./deploy_id_rsa.pem ./jsdaddy ubuntu@89.208.199.114:/home/ubuntu/backend
+- ssh -i ./deploy_id_rsa.pem ubuntu@89.208.199.114 sudo systemctl restart jsdaddy
 branches:
   only:
   - master
