@@ -5,6 +5,7 @@ script:
 - go build .
 - chmod 600 ./deploy_id_rsa.pem
 - ssh-keyscan -H 89.208.199.114 >> ~/.ssh/known_hosts
+- ls -la
 - scp -i ./deploy_id_rsa.pem ./jsdaddy ubuntu@89.208.199.114:/home/ubuntu/backend
 branches:
   only:
